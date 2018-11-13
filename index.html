@@ -33,9 +33,9 @@
         <div class="row">
             <div class="col-md-2">
 
-                <!-- 标签页 -->
+                <!-- 菜单 -->
                 <ul class="nav nav-pills nav-stacked" v-for="item in menus">
-                    <li role="presentation">
+                    <li class="menu-item" :id="'menu-'+item.id" v-on:click="clickMenuItem(item.id)" role="presentation">
                         <a :href="item.url">{{item.title}}</a>
                     </li>
                 </ul>
@@ -45,8 +45,8 @@
             <!-- 页体 -->
             <div class="col-md-10">
 
-                <ol class="breadcrumb" v-for="item in breadcrumbs">
-                    <li :class="item.active?'active':''">
+                <ol class="breadcrumb">
+                    <li v-for="item in breadcrumbs" :class="item.active?'active':''">
                         <a v-if="!item.active" :href="item.url">{{item.title}}</a>
                         <span v-else="item.active">{{item.title}}</span>
                     </li>

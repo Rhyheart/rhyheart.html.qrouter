@@ -1,8 +1,8 @@
 homeApp.breadcrumbs = [
     {
         title: "Home",
-        url: '#!home',
-        active: false
+        url: '#',
+        active: true
     }
 ];
 

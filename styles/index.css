@@ -4,7 +4,7 @@
 }
 
 .home .body{
-    padding: 10px;
+   
 }
 
 .home .foot{
@@ -28,4 +28,8 @@
 
 .nav>li>a:focus, .nav>li>a:hover{
     background-color: #fcfcfc;
+}
+
+.jumbotron{
+    padding-left: 50px;
 }
