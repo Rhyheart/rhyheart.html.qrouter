@@ -10,5 +10,3 @@ homeApp.breadcrumbs = [
         active: true
     }
 ];
-
-console.log(homeApp.breadcrumbs);
