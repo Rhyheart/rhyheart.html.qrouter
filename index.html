@@ -3,34 +3,77 @@
     <meta charset="utf-8" />
 
     <!-- 核心css -->
+    <link rel="stylesheet" href="assets/bootstrap/3.3.7/css/bootstrap.min.css" />
 
     <!-- 主页css -->
-    <link href="/styles/home/index.css" />
+    <link rel="stylesheet" href="styles/home/index.css" />
 
 </head>
 
 <body>
 
-    <!-- 页头 -->
-    <div class="home head">
+    <div id="app_home" class="home">
+
+        <!-- 页头 -->
+        <div class="head">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img alt="Brand" class="logo" src="assets/img/logo.png">
+                        </a>
+
+                    </div>
+                    <div class="title">示例项目</div>
+
+                </div>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+
+                <!-- 标签页 -->
+                <ul class="nav nav-pills nav-stacked" v-for="item in menus">
+                    <li role="presentation">
+                        <a :href="item.url">{{item.title}}</a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <!-- 页体 -->
+            <div class="col-md-10">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li class="active">Data</li>
+                </ol>
+                <div class="body" id="main-content">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 页尾 -->
+        <div class="foot">
+
+        </div>
 
     </div>
 
-
-    <!-- 页体 -->
-    <div class="home body">
-
-    </div>
-
-    <!-- 页尾 -->
-    <div class="home foot">
-
-    </div>
 
 </body>
 
 <!-- 核心js -->
-<script type="text/javascript" src="/assets/js/qrouter.js"></script>
+<script type="text/javascript" src="assets/vue/2.5.17/vue.min.js"></script>
+<script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/qrouter.js"></script>
+<script type="text/javascript" src="assets/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- 主页js -->
-<script type="text/javascript" src="/scripts/home/index.js"></script>
+<script type="text/javascript" src="scripts/home/index.js"></script>
