@@ -42,14 +42,16 @@
 
             </div>
 
-
             <!-- 页体 -->
             <div class="col-md-10">
-                <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Library</a></li>
-                    <li class="active">Data</li>
+
+                <ol class="breadcrumb" v-for="item in breadcrumbs">
+                    <li :class="item.active?'active':''">
+                        <a v-if="!item.active" :href="item.url">{{item.title}}</a>
+                        <span v-else="item.active">{{item.title}}</span>
+                    </li>
                 </ol>
+
                 <div class="body" id="main-content">
 
                 </div>

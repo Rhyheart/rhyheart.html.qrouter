@@ -2,7 +2,8 @@
 var homeApp = new Vue({
     el: '#app_home',
     data: {
-        menus: []
+        menus: [],
+        breadcrumbs: []
     },
     methods: {
 
@@ -24,18 +25,22 @@ homeApp.menus = [
     }
 ]
 
-
-Q.reg(/.*?/, function (path) {
-
-    if (path) {
-        load('views/' + path + ".html");
+homeApp.breadcrumbs = [
+    {
+        title: "Home",
+        url: '#',
+        active: true
     }
-
-}).init();
+];
 
 function load(path) {
-    console.log(path);
     $("#main-content").load(path, function () {
 
     });
 }
+
+Q.reg(/.*?/, function (path) {
+    if (path) {
+        load('views/' + path + ".html");
+    }
+}).init();
